@@ -1,0 +1,43 @@
+h1, h2, body, html, p {
+    margin:0;
+    padding:0;
+}
+
+body, html{
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('bookshelf.jpg');
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Vertically align the headers*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.parallax h1{
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    font-size: 3em;
+}
+
+#lorem {
+    margin: 10px;
+}
+
+#lorem p {
+    margin: 20px;
+}
