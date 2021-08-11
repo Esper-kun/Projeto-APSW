@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import datetime
 
-TEMPLATES = './templates'
+TEMPLATES = './view'
 STATIC = './static'
 
 app = Flask(__name__, template_folder=TEMPLATES, static_folder=STATIC)
