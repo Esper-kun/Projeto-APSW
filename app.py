@@ -4,7 +4,7 @@ import datetime
 TEMPLATES = './templates'
 STATIC = './static'
 
-app = Flask(__name__, template_folder=TEMPLATES, static_folder=STATIC)
+app = Flask(__name__, statics_url_path='', template_folder=TEMPLATES, static_folder=STATIC)
 
 @app.route('/')
 def helloWorld():
