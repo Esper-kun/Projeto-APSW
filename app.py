@@ -1,7 +1,6 @@
-from usuario import Usuario
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from config import banco
-import datetime
+from usuario import Usuario
 
 TEMPLATES = './view'
 STATIC = './static'
@@ -26,11 +25,23 @@ def home():
     mostrarUsuarios = True
     return render_template('home.html', dataAtual=data, usuarios=usuarios, mostrarUsuarios=mostrarUsuarios)
 
-@app.route('/cadastrarUsuario')
+@app.route('/paginaCadastro')
+def cadastro():
+    return render_template('cadastrarUsuario.html')
+
+@app.route('/cadastrarUsuario', methods=['POST'])
 def cadastrarUsuario():
-    usuario=Usuario("Flávio", "flavio@gmail.com")
+    nome = request.form.get('nome')
+    email = request.form.get('email')
+
+    usuario=Usuario(nome, email)
     banco.session.add(usuario)
     banco.session.commit()
     return 'Usuário cadastrado com sucesso!'
+
+@app.route('/consultarUsuarios')
+def consultarUsuarios():
+    usuarios = Usuario.query.all()
+    return render_template('listarUsuarios.html', usuarios=usuarios)
 
 app.run(host='0.0.0.0', port=5000)

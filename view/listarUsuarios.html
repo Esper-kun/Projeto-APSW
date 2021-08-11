@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="Favicon.png"/>
+    </head>
+
+    <body>
+      <h2>Lista de usuários</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+          {% for usuario in usuarios %}
+            
+            <tr>
+              <td>{{ usuario.nome }}</td>
+              <td>{{ usuario.email }}</td>
+            </tr>
+
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </body>
+</html>
