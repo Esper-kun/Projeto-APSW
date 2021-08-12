@@ -23,7 +23,7 @@ def cadastrarUsuario():
     usuario=Usuario(nome, email)
     banco.session.add(usuario)
     banco.session.commit()
-    return 'Usuário cadastrado com sucesso!'
+    return render_template('usuarioCadastradoOK.html')
 
 @usuario_blueprint.route('/consultarUsuarios')
 def consultarUsuarios():

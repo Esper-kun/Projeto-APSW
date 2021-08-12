@@ -28,11 +28,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-
 <div class="wrapper">
-
-  <!-- Preloader -->
-  {% include 'componentes/preloader.html' %}
 
   <!-- Navbar -->
   {% include 'componentes/navbar.html' %}
@@ -61,36 +57,11 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="card card-primary">
-          
-          <!-- /.card-header -->
-          <div class="card-header">
-            <h3 class="card-title">Cadastrar Usuário</h3>
-          </div>
+				<div class="callout callout-success">
+					<h5>Usuário cadastrado com sucesso!</h5>
 
-          <!-- /.card-body -->
-          <form action="/cadastrarUsuario" method="post">
-            <div class="card-body">
-            
-              <div class="form-group">
-                <label for="InputEmail">Email</label>
-                <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Enter email">
-              </div>
-              
-              <div class="form-group">
-                <label for="InputName">Nome</label>
-                <input type="text" class="form-control" name="nome" id="InputName" placeholder="Nome">
-              </div>
-
-              <!-- /.card-footer -->
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-              </div>
-            
-            </div>
-          </form>
-        </div>
-        <!-- /.card -->
+					<p>Acesse o menu lateral para mais ações.</p>
+				</div>
       </div>
       <!-- /.container-fluid -->
     </section>
