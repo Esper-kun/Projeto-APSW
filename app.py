@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
 from config import banco
-from usuario import Usuario
+from model.usuario import Usuario
+from controller.rotas_usuario import usuario_blueprint
 
 TEMPLATES = './view'
 STATIC = './static'
 
 app = Flask(__name__, static_url_path='', template_folder=TEMPLATES, static_folder=STATIC)
+app.register_blueprint(usuario_blueprint)
 
 # Configuração do Banco de Dados
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./dados.db'
@@ -18,30 +20,8 @@ with app.app_context():
 def helloWorld():
     return render_template('welcome.html')
 
-@app.route('/home')
-def home():
-    data = datetime.datetime.now()
-    usuarios = ['Flávio', 'Isabella', 'João', 'Maria']
-    mostrarUsuarios = True
-    return render_template('home.html', dataAtual=data, usuarios=usuarios, mostrarUsuarios=mostrarUsuarios)
+@app.route('/login', methods=['POST'])
+def login():
+    return render_template('index.html')
 
-@app.route('/paginaCadastro')
-def cadastro():
-    return render_template('cadastrarUsuario.html')
-
-@app.route('/cadastrarUsuario', methods=['POST'])
-def cadastrarUsuario():
-    nome = request.form.get('nome')
-    email = request.form.get('email')
-
-    usuario=Usuario(nome, email)
-    banco.session.add(usuario)
-    banco.session.commit()
-    return 'Usuário cadastrado com sucesso!'
-
-@app.route('/consultarUsuarios')
-def consultarUsuarios():
-    usuarios = Usuario.query.all()
-    return render_template('listarUsuarios.html', usuarios=usuarios)
-
-#app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5000)

@@ -5,14 +5,40 @@
     </head>
 
     <body>
-      <form action="/cadastrarUsuario" method="post">
-        <label for="fname">Nome: </label><br>
-        <input type="text" id="fname" name="nome" value="Maria dos Santos"><br>
-        
-        <label for="femail">Email:</label><br>
-        <input type="email" id="femail" name="email" value="maria.santos@gmail.com"><br><br>
-        
-        <input type="submit" value="Cadastrar">
-      </form>
+
+      <section class="content">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Cadastrar usuário</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              
+              <form action="/cadastrarUsuario" method="post">
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" class="form-control" name="email" 
+                          id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  </div>
+
+                  <br>
+                  
+                  <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Nome</label>
+                      <input type="text" name="nome" class="form-control" id="exampleInputPassword1" required>
+                  </div>
+                  
+                  <br>
+                  
+                  <button type="submit" class="btn btn-primary">Cadastrar</button>
+              </form>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->      
+        </div>
+        <!-- /.container-fluid -->
+      </section>
     </body>
 </html>
