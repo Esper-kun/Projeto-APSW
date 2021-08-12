@@ -20,8 +20,12 @@ with app.app_context():
 def helloWorld():
     return render_template('welcome.html')
 
-@app.route('/login', methods=['POST'])
+@app.route('/admin', methods=['POST'])
 def login():
+    return render_template('index.html')
+
+@app.route('/admin')
+def admin():
     return render_template('index.html')
 
 app.run(host='0.0.0.0', port=5000)
