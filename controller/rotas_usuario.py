@@ -28,4 +28,4 @@ def cadastrarUsuario():
 @usuario_blueprint.route('/consultarUsuarios')
 def consultarUsuarios():
     usuarios = Usuario.query.all()
-    return render_template('index.html', usuarios=usuarios)
+    return render_template('listarUsuarios.html', usuarios=usuarios)
