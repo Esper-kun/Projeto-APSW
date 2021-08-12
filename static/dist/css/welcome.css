@@ -5,12 +5,12 @@ h1, h2, body, html, p {
 
 body, html{
     height: 100%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Arvo', serif;
 }
 
 .parallax {
     /* The image used */
-    background-image: url('bookshelf.jpg');
+    background-image: url('../../bookshelf.jpg');
   
     /* Full height */
     height: 100%; 
@@ -31,7 +31,16 @@ body, html{
     text-align: center;
     color: white;
     vertical-align: middle;
+    font-family: 'Biryani', sans-serif;
     font-size: 5em;
+    margin: 0px 0.3em;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0px 15vw;
 }
 
 #button {
@@ -42,9 +51,9 @@ body, html{
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 3em;
-    margin: 50px auto;
+    font-size: 2vw;
+    font-family: 'Special Elite', cursive;
+    margin: 20px 20px;
     cursor: pointer;
 }
 
