@@ -29,3 +29,6 @@ def cadastrarUsuario():
 def consultarUsuarios():
     usuarios = Usuario.query.all()
     return render_template('listarUsuarios.html', usuarios=usuarios)
+@usuario_blueprint.route('/editarUsuarios')
+def removerUsuarios():
+    return render_template('editarUsuarios.html')
